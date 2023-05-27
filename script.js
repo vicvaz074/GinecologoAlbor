@@ -87,3 +87,54 @@ for (var letra in servicios) {
         selectServicios.add(option);
     }
 }
+
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 100) {
+    backToTopButton.classList.add('show');
+  } else {
+    backToTopButton.classList.remove('show');
+  }
+});
+
+
+backToTopButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  const facebookIcon = document.querySelector('.fab.fa-facebook-f');
+  const whatsappIcon = document.querySelector('.fab.fa-whatsapp');
+
+  facebookIcon.addEventListener('click', () => {
+    window.open('https://www.facebook.com/GinecologoAlbor', '_blank');
+  });
+
+  whatsappIcon.addEventListener('click', () => {
+    window.open('https://api.whatsapp.com/send?phone=529513098939', '_blank');
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var goToStartBtn = document.getElementById('go-to-start');
+
+  goToStartBtn.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 200) {
+      goToStartBtn.classList.add('show');
+    } else {
+      goToStartBtn.classList.remove('show');
+    }
+  });
+});
